@@ -10,17 +10,16 @@
       <li class="nav-item"><a class="nav-link" routerLink="index">Angular</a></li>
     </ul>
     <ul class="navbar-nav">
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-           aria-haspopup="true" aria-expanded="false">
-          Social Logins
+      <li class="dropdown" ngbDropdown>
+        <a ngbDropdownToggle role="button">
+          Social Logins <span class="caret"></span>
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" routerLink="login/facebook">Login with Facebook</a>
-          <a class="dropdown-item" routerLink="login/github">Login with Github</a>
+        <ul ngbDropdownMenu class="dropdown-menu">
+          <li><a class="dropdown-item" routerLink="login/facebook">Login with Facebook</a></li>
+          <li><a class="dropdown-item" routerLink="login/github">Login with Github</a></li>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" routerLink="about">About</a>
-        </div>
+          <li><a class="dropdown-item" routerLink="about">About</a></li>
+        </ul>
       </li>
     </ul>
 <!--
