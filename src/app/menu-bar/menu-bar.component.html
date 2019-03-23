@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" style="color:blueviolet" routerLink="/">Virtual Remembrance</a>
+  <a class="navbar-brand" style="color:blueviolet" routerLink="/">{{title}}</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -10,15 +10,15 @@
       <li class="nav-item"><a class="nav-link" routerLink="index">Angular</a></li>
     </ul>
     <ul class="navbar-nav">
-      <li class="dropdown" ngbDropdown>
-        <a ngbDropdownToggle role="button">
-          Social Logins <span class="caret"></span>
+      <li class="nav-item dropdown" ngbDropdown>
+        <a ngbDropdownToggle class="nav-link" role="button" aria-haspopup="true" aria-expanded="false">
+          Social Logins
         </a>
-        <ul ngbDropdownMenu class="dropdown-menu">
-          <li><a class="dropdown-item" routerLink="login/facebook">Login with Facebook</a></li>
-          <li><a class="dropdown-item" routerLink="login/github">Login with Github</a></li>
-          <div class="dropdown-divider"></div>
-          <li><a class="dropdown-item" routerLink="about">About</a></li>
+        <ul ngbDropdownMenu class="dropdown-menu bg-dark text-white" aria-labelledby="navbarDropdown">
+          <li><a class="dropdown-item bg-dark text-white" routerLink="login/facebook">Login with Facebook</a></li>
+          <li><a class="dropdown-item bg-dark text-white" routerLink="login/github">Login with Github</a></li>
+          <div class="dropdown-divider bg-dark text-white"></div>
+          <li><a class="dropdown-item bg-dark text-white" routerLink="about">About</a></li>
         </ul>
       </li>
     </ul>
