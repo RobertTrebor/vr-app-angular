@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Cemetery} from "../../cemetery";
+import {Cemetery} from '../../cemetery';
 
 @Component({
   selector: 'app-cemetery',
@@ -11,10 +11,10 @@ export class CemeteryComponent implements OnInit {
   constructor() {
   }
 
+  @Input()
+  cemetery: Cemetery;
+
   ngOnInit() {
   }
-
-@Input()
-  cemetery: Cemetery;
 
 }

@@ -1,11 +1,16 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import {CemeteriesComponent} from "./cemeteries/cemeteries.component";
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {CemeteriesComponent} from './cemeteries/cemeteries.component';
+import {CemeteryComponent} from './cemeteries/cemetery/cemetery.component';
 
 const routes: Routes = [
   {
     path: 'cemeteries',
     component: CemeteriesComponent,
+  },
+  {
+    path: 'cemetery',
+    component: CemeteryComponent,
   },
   {
     path: '**',

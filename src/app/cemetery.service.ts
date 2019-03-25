@@ -1,8 +1,8 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable, BehaviorSubject } from 'rxjs';
-import { map } from 'rxjs/operators';
-import { Cemetery } from './cemetery';
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {BehaviorSubject, Observable} from 'rxjs';
+import {map} from 'rxjs/operators';
+import {Cemetery} from './cemetery';
 
 @Injectable({
   providedIn: 'root'
@@ -18,15 +18,17 @@ export class CemeteryService {
   cemeteries$: Observable<Cemetery[]>;
 
   private loadCemeteries() {
-    this.http.get<{
-      data: {
+    console.log('loadCemeteries');
+    const subscription = this.http.get<{
+      _embedded: {
         cemeteries: Cemetery[]
       }
-    }>('https://-------')
-    .pipe(map(body => body.data.cemeteries))
-    .subscribe(cemeteries => {
-      this.cemeteries.next(cemeteries);
-    });
+    }>('http://localhost:8080/cemeteries')
+      .pipe(map(body => body._embedded.cemeteries))
+      .subscribe(cemeteries => {
+        this.cemeteries.next(cemeteries);
+      });
+    console.log(subscription);
   }
 
 }
