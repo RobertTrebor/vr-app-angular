@@ -1,0 +1,12 @@
+:host {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+app-cemeteries {
+  margin-bottom: 8px;
+}
+
+app-cemeteries + app-cemeteries {
+  margin-left: 8px;
+}

@@ -22,26 +22,11 @@ export class CemeteryService {
       data: {
         cemeteries: Cemetery[]
       }
-    }>('https://api.imgflip.com/get_memes')
+    }>('https://-------')
     .pipe(map(body => body.data.cemeteries))
     .subscribe(cemeteries => {
       this.cemeteries.next(cemeteries);
     });
   }
-
-  /*generateCemetery(name: string): Observable<string> {
-    return this.http.post<{
-      data: {
-        url: string
-      }
-    }>('https://api.imgflip.com/caption_image', {
-      //template_id: memeId,
-      username: 'mgbots',
-      password: 'nihackathonbots',
-      //text0: caption,
-      text1: ''
-    })
-    .pipe(map(body => body.data.url));
-  }*/
 
 }
