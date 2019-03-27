@@ -14,6 +14,7 @@ export class CemeteryComponent implements OnInit {
   @Input()
   cemetery: Cemetery;
 
+
   ngOnInit() {
   }
 

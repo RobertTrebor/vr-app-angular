@@ -23,7 +23,7 @@ export class CemeteryService {
       _embedded: {
         cemeteries: Cemetery[]
       }
-    }>('http://localhost:8080/cemeteries')
+    }>('https://vr-spring.herokuapp.com/cemeteries')
       .pipe(map(body => body._embedded.cemeteries))
       .subscribe(cemeteries => {
         this.cemeteries.next(cemeteries);
