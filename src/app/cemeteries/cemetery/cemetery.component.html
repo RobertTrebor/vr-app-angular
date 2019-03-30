@@ -3,8 +3,24 @@
 </p>
 <header>{{cemetery.name}}</header>
 <section id="details">
-    <div><h1>{{cemetery.name}}</h1></div>
+    <div>
+      <p>{{cemetery.id}}</p>
+      <p>{{cemetery.name}}</p>
+      <p>{{cemetery.city}}</p>
+      <p>{{cemetery._links.self.href}}</p>
+      <p>{{cemetery._links.cemetery.href}}</p>
+      <p>{{cemetery._links.graves.href}}</p>
+      <a routerLink="{{cemetery.id}}/graves">
+        <span>{{cemetery.id}}/graves</span>
+      </a>
+      <a href="{{cemetery._links.graves.href}}">
+        <span>{{cemetery._links.graves.href}}</span>
+      </a>
+      <app-graves [selectedCemetery]="cemetery"></app-graves>
+    </div>
 </section>
+
+
 <!--
 <section id="image">
   <div [style.background-image]="'url(' + meme.url + ')'"

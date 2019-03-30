@@ -11,7 +11,7 @@ import {map} from 'rxjs/operators';
 })
 export class CemeteriesComponent implements OnInit {
 
-  constructor(cemeteryService: CemeteryService) {
+  constructor(private cemeteryService: CemeteryService) {
     console.log('cemeteries.components');
     this.cemeteries$ = cemeteryService.cemeteries$.pipe(
       map(cemeteries => {

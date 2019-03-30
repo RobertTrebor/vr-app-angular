@@ -1,6 +1,6 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
-import { GraveService } from './grave.service';
+import {GraveService} from './grave.service';
 
 describe('GraveService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
