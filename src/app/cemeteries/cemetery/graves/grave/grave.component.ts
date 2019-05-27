@@ -1,6 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Grave} from "../../grave";
-
+import {Grave} from '../../grave';
 
 @Component({
   selector: 'app-grave',
@@ -15,7 +14,7 @@ export class GraveComponent implements OnInit {
   grave: Grave;
 
   ngOnInit() {
+    console.log('onInit-GraveComponent: ' + this.grave.firstName);
   }
-
 
 }

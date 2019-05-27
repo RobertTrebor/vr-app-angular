@@ -1,8 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {map} from "rxjs/operators";
-import {GraveService} from "../grave.service";
-import {Observable} from "rxjs";
-import {Grave} from "../grave";
+import {GraveService} from '../grave.service';
+import {Observable} from 'rxjs';
+import {Grave} from '../grave';
+import {Cemetery} from '../../../cemetery';
 
 @Component({
   selector: 'app-graves',
@@ -11,28 +11,22 @@ import {Grave} from "../grave";
 })
 export class GravesComponent implements OnInit {
 
+  @Input()
+  selectedCemetery: Cemetery;
+  @Input()
+  graves$: Observable<Grave[]>;
+
   constructor(graveService: GraveService) {
-    this.graves$ = graveService.graves$.pipe(
-      map(graves => {
-        const sorted = Array.from(graves);
-        sorted.sort((a, b) => {
-          if (a.firstName > b.firstName) {
-            return 1;
-          } else if (a.firstName < b.firstName) {
-            return -1;
-          }
-          return 0;
-        });
-        return sorted;
-      })
-    );
-    console.log(this.graves$);
+    console.log('GravesComponentConstructor: ' + this.selectedCemetery);
+    this.graves$ = graveService.graves$.pipe();
+    console.log('constructor-this.graves: ' + this.graves$);
   }
 
   ngOnInit() {
+    if (this.selectedCemetery == null) {
+      return;
+    }
+    console.log('GravesComponent-onInit: ' + this.selectedCemetery.id);
   }
-
-  @Input()
-  graves$: Observable<Grave[]>;
 
 }

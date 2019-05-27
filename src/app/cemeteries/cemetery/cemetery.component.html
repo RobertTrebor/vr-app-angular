@@ -1,15 +1,15 @@
 <section id="details">
-    <div><h3>{{cemetery.name}} {{cemetery.city}} {{cemetery.street}}</h3></div>
-    <app-graves ></app-graves>
+    <div><h3>{{cemetery.id}} {{cemetery.name}} {{cemetery.city}} {{cemetery.street}}</h3></div>
 
-
-    <div><h3>{{cemetery._links.self.href}}</h3></div>
-    <div><h3>{{cemetery._links.graves.href}}</h3></div>
+    <p>{{cemetery._links.self.href}}</p>
+    <p>{{cemetery._links.cemetery.href}}</p>
+    <p>{{cemetery._links.graves.href}}</p>
+    <a routerLink="{{cemetery.id}}/graves">
+      <span>{{cemetery.id}}/graves</span>
+    </a>
+    <a href="{{cemetery._links.graves.href}}">
+      <span>{{cemetery._links.graves.href}}</span>
+    </a>
+    <app-graves [selectedCemetery]="cemetery"></app-graves>
     <br/>
 </section>
-<!--
-<section id="image">
-  <div [style.background-image]="'url(' + meme.url + ')'"
-       [style.width.px]="meme.width/4"
-       [style.height.px]="meme.height/4"></div>
-</section>-->

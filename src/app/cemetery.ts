@@ -1,18 +1,10 @@
-import {Grave} from "./cemeteries/cemetery/grave";
+import {Link} from './_links';
 
 export interface Cemetery {
+  id: string;
   name: string;
   city: string;
   street: string;
-  _links: {
-    self: {
-      href: string;
-    }
-    cemetery: {
-      href: string;
-    }
-    graves: {
-      href: string;
-    }
-  }
+  _links: Link;
+
 }
