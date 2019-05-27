@@ -8,13 +8,17 @@ import { MenuBarComponent } from './menu-bar/menu-bar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CemeteriesComponent } from './cemeteries/cemeteries.component';
 import { CemeteryComponent } from './cemeteries/cemetery/cemetery.component';
+import { GraveComponent } from './cemeteries/cemetery/graves/grave/grave.component';
+import { GravesComponent } from './cemeteries/cemetery/graves/graves.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuBarComponent,
     CemeteriesComponent,
-    CemeteryComponent
+    CemeteryComponent,
+    GraveComponent,
+    GravesComponent
   ],
   imports: [
     BrowserModule,

@@ -1,9 +1,11 @@
-<p>
-  cemetery works!
-</p>
-<header>{{cemetery.name}}</header>
 <section id="details">
-    <div><h1>{{cemetery.name}}</h1></div>
+    <div><h3>{{cemetery.name}} {{cemetery.city}} {{cemetery.street}}</h3></div>
+    <app-graves ></app-graves>
+
+
+    <div><h3>{{cemetery._links.self.href}}</h3></div>
+    <div><h3>{{cemetery._links.graves.href}}</h3></div>
+    <br/>
 </section>
 <!--
 <section id="image">
